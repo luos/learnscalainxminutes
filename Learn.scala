@@ -40,7 +40,7 @@ d: Double = 9.0
 // You don't have to use ; on line endings or . in object.method or () after parameter lists in method calls  if not ambiguous. In my experience the dots and braces are needed in a lot of cases. [1]
 def myFunction(param: ParamType) = "Something"
 // It is the same as 
-def myFunction(param: ParamType) : String { // After the : there is the return type
+def myFunction(param: ParamType) : String = { // After the : there is the return type
 	return "Something" // And here is the explicit return keyword, if returning from a function with the keyword we have to specify the return type too
 }
 
@@ -70,6 +70,11 @@ res24: java.lang.String = Hi 100 100
 
 scala> myFunc(secondParam = 500)
 res25: java.lang.String = Hi 0 500
+
+// If you want to create a function to pass to functions like map
+theValue => theFunctionBody
+// or with multiple arguments
+(arg1,arg2) => body
 
 // Everything is a statement
 // it means we can save blocks' return values into variables
@@ -104,10 +109,7 @@ scala> hello
 res1: java.lang.String = hello
 
 
-// If you want to create a function to pass to functions like map
-theValue => theFunctionBody
-// or with multiple arguments
-(arg1,arg2) => body
+
 
 
 // Options
